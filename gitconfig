@@ -1,0 +1,32 @@
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = /Users/avi/.gitignore
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    who = shortlog -s --
+    up = pull
+[github]
+	user = 
+	token = 
+	email = 
+[github "user"]
+	user = 
+	token = 
+	email = 
+[user]
+	name = 
+	email = 
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+[diff "ruby"]
+  funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
+[push]
+  default = tracking
