@@ -20,21 +20,9 @@ export SVN_EDITOR="mate -w"
 export GIT_EDITOR="mate -w"
 export EDITOR="mate -w"
 
-export EC2_HOME="/Users/avi/.ec2"
-export EC2_PRIVATE_KEY="/Users/avi/.ec2/pk-UGSXAMQ752UUNWCAYLARZS6AL2GBVGL3.pem"
-export EC2_CERT="/Users/avi/.ec2/cert-UGSXAMQ752UUNWCAYLARZS6AL2GBVGL3.pem"
-
 export PATH="/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/mysql/bin:$PATH"
 
 # Aliases
-
-# Folder Shortcuts
-alias code="cd /Users/avi/Development/projects/Designerpages/code"
-alias dp='cd /Users/avi/Development/projects/Designerpages/code/designerpages'
-alias proj='cd /Users/avi/Development/projects/'
-
-# Iterm Rails Project
-alias s="iterm_rails_project.sh $1"
 
 # Subversion
 alias sup="svn update"
@@ -65,6 +53,7 @@ alias ett="mate app config lib db public test spec vendor/plugins data features 
 
 # Rails
 alias kl_ruby="killall -9 ruby"
+alias bur='bundle exec rake'
 
 # Cucumber
 alias buc='bundle exec cucumber -r features features'
@@ -100,10 +89,6 @@ alias sgi="sudo gem install "
 
 # Memcached
 alias kl_memcached="killall -9 memcached"
-
-# MongoDB
-alias s_mongo="mongod run --config /usr/local/Cellar/mongodb/1.6.0-x86_64/mongod.conf --logappend --fork"
-alias kl_mongo="killall -9 mongod"
 
 # A Better Rsynched Based SCP
 alias scrp="rsync --partial --progress --rsh=ssh"
@@ -174,5 +159,3 @@ EOF
        fi
 
 }
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
