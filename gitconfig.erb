@@ -1,0 +1,44 @@
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    who = shortlog -s --
+    up = pull
+    pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+  switch = !legit switch \"$@\"
+  branches = !legit branches
+  sprout = !legit sprout \"$@\"
+  unpublish = !legit unpublish \"$@\"
+  harvest = !legit harvest \"$@\"
+  sync = !legit sync \"$@\"
+  publish = !legit publish \"$@\"
+  graft = !legit graft \"$@\"
+[github]
+  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+[user]
+  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+[diff "ruby"]
+  funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
+[push]
+  default = current
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
